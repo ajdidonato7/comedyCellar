@@ -1,8 +1,11 @@
 import requests
+from datetime import datetime
 
 url = "https://www.comedycellar.com/lineup/api/"
 
-payload = "action=cc_get_shows&json={\"date\":\"2024-09-18\",\"venue\":\"newyork\",\"type\":\"lineup\"}"
+todays_date = datetime.today().strftime('%Y-%m-%d')
+
+payload = "action=cc_get_shows&json={\"date\":\"" + todays_date + "\",\"venue\":\"newyork\",\"type\":\"lineup\"}"
 headers = {
   'sec-ch-ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
